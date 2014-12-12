@@ -3,15 +3,16 @@
 
 #Rough plan of web server installation:
 # 1. Enable yum keepcache (ok):
-# Set "keepcache = 1" in "/etc/yum.conf"
-# 
-# 2.
+#   Set "keepcache = 1" in "/etc/yum.conf"
+#
+#   Status: FINISHED
+# 2. Set ethernet adapter
 #
 #
 #
 #
-#
-#
+#   Status: A LOT TO WORK ON (but ok in general)
+# 3.
 #
 #
 
