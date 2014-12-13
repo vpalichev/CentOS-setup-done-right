@@ -92,8 +92,7 @@
 CurrentTime=$(date -u +'%Y-%m-%dU%H-%M-%S')
 
 echo -e "\e[33m----------------------------------------------\e[0m"
-echo -e "\e[33m-----------basic-install-script.sh------------\e[0m"
-echo -e "\e[33m$CurrentTime: commencing installation \e[0m"
+echo -e "\e[33m$CurrentTime: commencing basic-install-script.sh \e[0m"
 
 
 # 1. Enable yum caching
