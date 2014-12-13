@@ -76,6 +76,10 @@ echo -e "\e[33m----------------------------------------------\e[0m"
 CurrentTime=$(date -u +'%Y-%m-%dU%H-%M-%S')
 echo -e "\e[33m$CurrentTime: commencing basic-install-script.sh \e[0m"
 
+# 1.3. Turn off firewall (USE WITH CARE)   
+chkconfig iptables off
+service iptables stop
+
 # 1.4. Enable yum cache
 echo "Enabling yum cache..."
 sed -i 's/keepcache=0/keepcache=1/g' /etc/yum.conf
