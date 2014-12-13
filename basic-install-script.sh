@@ -98,7 +98,7 @@ sed -i 's/keepcache=0/keepcache=1/g' /etc/yum.conf
 
 # 3. 
 
-EndDate = date +"%Y-%m-%dU%H-%M-%S"
+EndDate=$(date +"%Y-%m-%dU%H-%M-%S")
 
 echo "The end of basic web server installation script is reached: "
 echo $EndDate
