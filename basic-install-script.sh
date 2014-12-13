@@ -15,12 +15,17 @@
 #     TODO: sed replace SELINUX with "SELINUX=disabled"
 #
 #     Status: not ready
+#
+#   1.3. Turn off firewall (USE WITH CARE)   
+#     chkconfig iptables off
+#     service iptables stop
+#
+#     Status: not ready
 
-
-# 2. Enable yum keepcache (ok):
+#   1.4. Save installed packages in yum cache 
 #   Set "keepcache = 1" in "/etc/yum.conf"
 #
-#   Status: FINISHED
+#   Status: RECHECK
 #
 # 3. Turn off firewall (USE WITH CARE):
 #
