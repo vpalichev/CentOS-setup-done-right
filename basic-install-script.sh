@@ -1,7 +1,8 @@
 #!/bin/bash
 
-# Address of this script:
-# github.com/vpalichev/CentOS-setup-done-right/raw/master/basic-install-script.sh
+# To download this script
+# curl -L -o /root/basic-install-script.sh github.com/vpalichev/CentOS-setup-done-right/raw/master/basic-install-script.sh
+
 
 #==============================================================
 #
@@ -68,6 +69,11 @@
 # 4. Install nginx
 #
 #
+# 5. Install PHP
+#
+#
+#
+#
 
 
 
@@ -75,6 +81,21 @@
 echo -e "\e[33m----------------------------------------------\e[0m"
 CurrentTime=$(date -u +'%Y-%m-%dU%H-%M-%S')
 echo -e "\e[33m$CurrentTime: commencing basic-install-script.sh \e[0m"
+
+# 1.1. Set ethernet adapter settings
+# ???
+
+
+
+    Edit "/etc/sysconfig/network-scripts/ifcfg-eth0" and "/etc/sysconfig/network"
+#     Refer to: http://www.cyberciti.biz/faq/linux-configure-a-static-ip-address-tutorial/
+#
+#     Status: A LOT TO WORK ON (but OK in general)
+#
+#   1.2. Turn off SELinux 
+#     Edit "vi /etc/selinux/config"
+#     TODO: sed replace SELINUX with "SELINUX=disabled"
+
 
 # 1.3. Turn off firewall (USE WITH CARE)   
 chkconfig iptables off
@@ -94,7 +115,7 @@ ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 
 
 # 2. Adding repositories
-#2.1. EPEL repository (TODO: for what)
+# 2.1. EPEL repository (TODO: for what)
 echo "Adding EPEL repository..."
 yum -y install epel-release
 
@@ -113,7 +134,12 @@ curl -L -o "/etc/yum.repos.d/nginx.repo" "https://github.com/vpalichev/CentOS-se
 # 4. Install nginx
 echo "Installing nginx..."
 yum -y install nginx
+service nginx start
 
+
+# 5. Install PHP
+echo "Installing PHP..."
+yum -y --enablerepo=remi,remi-php56 install php-fpm php-common
 
 
 # 2. Not much here yet!
