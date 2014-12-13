@@ -1,11 +1,13 @@
 #!/bin/bash
 
+# Address of this script:
+# github.com/vpalichev/CentOS-setup-done-right/raw/master/basic-install-script.sh
 
 #==============================================================
 #
 # Rough plan of web server installation:
 #
-#--------------------------------
+#------------------------------------
 # 1. Very basic system routines
 #
 #   1.1. Set ethernet adapter
@@ -44,7 +46,9 @@
 #	1.6. Set UTC timezone
 #			ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 #
-#--------------------------------
+#			Status: ready to be implemented
+#
+#------------------------------------
 # 2. Add necessary repositories
 #   2.1. EPEL repository (TODO: for what)
 #     yum install epel-release
@@ -54,9 +58,11 @@
 #   Status: seems to be OK
 #
 #--------------------------------
-# 3. Samba installation and configuration
-#   3.1. Install all Samba packages
-#   3.2. Configure samba server, setup samba folder
+# 3. Setup SFTP
+#   ???
+#   ???
+#
+#		Status: 
 #
 #
 #
@@ -86,7 +92,6 @@
 
 
 
-rm basic-install-script.sh
 
 curl -L -O "github.com/vpalichev/CentOS-setup-done-right/raw/master/basic-install-script.sh"
 echo "TEST TEST TEST !!!"
