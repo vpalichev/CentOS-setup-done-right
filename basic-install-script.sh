@@ -89,7 +89,7 @@
 
 #
 
-CurrentTime=$(date +'%Y-%m-%dU%H-%M-%S')
+CurrentTime=$(date -u +'%Y-%m-%dU%H-%M-%S')
 
 echo "----------------------------------------------"
 echo -e "\e[33m Commencing installation at $CurrentTime \e[0m"
@@ -103,7 +103,7 @@ sed -i 's/keepcache=0/keepcache=1/g' /etc/yum.conf
 
 # 3. 
 
-CurrentTime=$(date +'%Y-%m-%dU%H-%M-%S')
+CurrentTime=$(date -u +'%Y-%m-%dU%H-%M-%S')
 
 echo "The end of basic web server installation script is reached: "
 echo $CurrentTime
