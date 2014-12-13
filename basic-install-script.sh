@@ -29,17 +29,20 @@
 #       1.3 Restart Iptables Firewall: service iptables restart
 #       /etc/init.d/iptables restart
 #
-#     Status: not ready
+#			Status: not ready
 #
 #   1.4. Save installed packages in yum cache 
-#     Set "keepcache = 1" in "/etc/yum.conf"
+#			Set "keepcache = 1" in "/etc/yum.conf"
 #
-#     Status: RECHECK
+#			Status: RECHECK
 #
 #   1.5. Install download-only plugin for yum to be able to save packages without installing
 #     yum install yum-plugin-downloadonly
 #
 #     Status: almost finished
+#
+#	1.6. Set UTC timezone
+#			ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 #
 #--------------------------------
 # 2. Add necessary repositories
@@ -97,3 +100,4 @@ sed -i 's/keepcache=0/keepcache=1/g' /etc/yum.conf
 
 
 echo "The end of basic web server installation script is reached: "
+echo date +"%Y-%m-%dU%H-%M-%S"
