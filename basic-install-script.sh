@@ -91,8 +91,9 @@
 
 CurrentTime=$(date -u +'%Y-%m-%dU%H-%M-%S')
 
-echo "----------------------------------------------"
-echo -e "\e[33m Commencing installation at $CurrentTime \e[0m"
+echo -e "\e[33m----------------------------------------------\e[0m"
+echo -e "\e[33m-----------basic-install-script.sh------------\e[0m"
+echo -e "\e[33m$CurrentTime: commencing installation \e[0m"
 
 
 # 1. Enable yum caching
@@ -107,4 +108,6 @@ CurrentTime=$(date -u +'%Y-%m-%dU%H-%M-%S')
 
 echo "The end of basic web server installation script is reached: "
 echo $CurrentTime
-echo -e "\e[33m-------------basic-install-script.sh--------------\e[0m"
+
+echo -e "\e[33m$CurrentTime: finishing installation \e[0m"
+echo -e "\e[33m----------------------------------------------\e[0m"
