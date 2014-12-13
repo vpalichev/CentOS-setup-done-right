@@ -94,3 +94,6 @@ sed -i 's/keepcache=0/keepcache=1/g' /etc/yum.conf
 
 
 # 3. 
+
+
+echo "The end of basic web server installation script is reached: "
