@@ -86,7 +86,9 @@
 
 
 
-curl -L -O "https://github.com/vpalichev/CentOS-setup-done-right/raw/master/basic-install-script.sh"
+rm basic-install-script.sh
+
+curl -L -O "github.com/vpalichev/CentOS-setup-done-right/raw/master/basic-install-script.sh"
 echo "TEST TEST TEST !!!"
 
 
