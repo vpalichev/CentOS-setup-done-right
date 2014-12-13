@@ -36,9 +36,9 @@
 #   1.4. Save installed packages in yum cache 
 #			Set "keepcache = 1" in "/etc/yum.conf"
 #
-#			Status: RECHECK
+#			Status: ok for now
 #
-#   1.5. Install download-only plugin for yum to be able to save packages without installing
+#   1.5. (optional) Install download-only plugin for yum to be able to save packages without installing
 #     yum install yum-plugin-downloadonly
 #
 #     Status: almost finished
@@ -54,6 +54,7 @@
 #     yum install epel-release
 #   2.2. REMI repository (TODO: for what)
 #     rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+#		2.3. Create repo file for nginx
 #
 #   Status: seems to be OK
 #
@@ -67,46 +68,52 @@
 # 4. Install nginx
 #
 #
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
 
 
-#
 
-CurrentTime=$(date -u +'%Y-%m-%dU%H-%M-%S')
-
+# Beginning echo's
 echo -e "\e[33m----------------------------------------------\e[0m"
+CurrentTime=$(date -u +'%Y-%m-%dU%H-%M-%S')
 echo -e "\e[33m$CurrentTime: commencing basic-install-script.sh \e[0m"
 
-
-# 1. Enable yum caching
+# 1.4. Enable yum cache
+echo "Enabling yum cache..."
 sed -i 's/keepcache=0/keepcache=1/g' /etc/yum.conf
+
+# 1.5. (optional) Install download-only plugin for yum to be able to save packages without installing
+echo "Installing download-only plugin for yum..."
+yum -y install yum-plugin-downloadonly
+
+# 1.6. Set UTC timezone
+echo "Setting UTC timezone..."
+ln -sf /usr/share/zoneinfo/UTC /etc/localtime
+
+
+# 2. Adding repositories
+#2.1. EPEL repository (TODO: for what)
+echo "Adding EPEL repository..."
+yum -y install epel-release
+
+# 2.2. REMI repository (TODO: for what)
+echo "Adding REMI repository..."
+rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+
+# 2.3. Create repo file for nginx
+echo "Adding repo file for nginx..."
+curl -L -o "/etc/yum.repos.d/nginx.repo" "https://github.com/vpalichev/CentOS-setup-done-right/raw/master/RepoFiles/nginx.repo"
+
+
+# 3. Setup SFTP
+#   ???
+
+
+
 
 # 2. Not much here yet!
 
 
 # 3. 
 
+echo -e "\e[33m$CurrentTime: finishing basic-install-script.sh \e[0m"
 CurrentTime=$(date -u +'%Y-%m-%dU%H-%M-%S')
-
-echo "The end of basic web server installation script is reached: "
-echo $CurrentTime
-
-echo -e "\e[33m$CurrentTime: finishing installation \e[0m"
 echo -e "\e[33m----------------------------------------------\e[0m"
