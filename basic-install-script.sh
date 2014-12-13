@@ -43,7 +43,7 @@
 #
 #     Status: almost finished
 #
-#	1.6. Set UTC timezone
+#		1.6. Set UTC timezone
 #			ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 #
 #			Status: ready to be implemented
@@ -64,7 +64,7 @@
 #
 #		Status: 
 #
-# 
+# 4. Install nginx
 #
 #
 #
@@ -89,12 +89,10 @@
 
 #
 
+CurrentTime=$(date +'%Y-%m-%dU%H-%M-%S')
 
-
-
-
-curl -L -O "github.com/vpalichev/CentOS-setup-done-right/raw/master/basic-install-script.sh"
-echo "TEST TEST TEST !!!"
+echo "----------------------------------------------"
+echo -e "\e[33m Commencing installation at $CurrentTime \e[0m"
 
 
 # 1. Enable yum caching
@@ -105,8 +103,8 @@ sed -i 's/keepcache=0/keepcache=1/g' /etc/yum.conf
 
 # 3. 
 
-EndDate=$(date +'%Y-%m-%dU%H-%M-%S')
+CurrentTime=$(date +'%Y-%m-%dU%H-%M-%S')
 
 echo "The end of basic web server installation script is reached: "
-echo $EndDate
-echo "END-------------basic-install-script.sh--------------END"
+echo $CurrentTime
+echo -e "\e[33m-------------basic-install-script.sh--------------\e[0m"
