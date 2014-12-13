@@ -72,7 +72,7 @@
 # 5. Install PHP
 #
 #
-#
+# 6. Install MySQL
 #
 
 
@@ -84,19 +84,10 @@ echo -e "\e[33m$CurrentTime: commencing basic-install-script.sh \e[0m"
 
 # 1.1. Set ethernet adapter settings
 # ???
-
-
-
-    Edit "/etc/sysconfig/network-scripts/ifcfg-eth0" and "/etc/sysconfig/network"
-#     Refer to: http://www.cyberciti.biz/faq/linux-configure-a-static-ip-address-tutorial/
 #
-#     Status: A LOT TO WORK ON (but OK in general)
-#
-#   1.2. Turn off SELinux 
-#     Edit "vi /etc/selinux/config"
-#     TODO: sed replace SELINUX with "SELINUX=disabled"
-
-
+# 1.2. Turn off SELinux 
+# ???    
+#  
 # 1.3. Turn off firewall (USE WITH CARE)   
 chkconfig iptables off
 service iptables stop
@@ -142,11 +133,16 @@ echo "Installing PHP..."
 yum -y --enablerepo=remi,remi-php56 install php-fpm php-common
 
 
+# 6. Install MySQL
+echo "Installing MySQL..."
+yum install mysql-server
+chkconfig mysqld on
+
+
 # 2. Not much here yet!
 
 
 # 3. 
-
-echo -e "\e[33m$CurrentTime: finishing basic-install-script.sh \e[0m"
 CurrentTime=$(date -u +'%Y-%m-%dU%H-%M-%S')
+echo -e "\e[33m$CurrentTime: finishing basic-install-script.sh \e[0m"
 echo -e "\e[33m----------------------------------------------\e[0m"
