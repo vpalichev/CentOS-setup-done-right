@@ -109,4 +109,4 @@ EndDate=$(date +'%Y-%m-%dU%H-%M-%S')
 
 echo "The end of basic web server installation script is reached: "
 echo $EndDate
-echo "-------------------------------------------------"
+echo "END-------------basic-install-script.sh--------------END"
