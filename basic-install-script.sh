@@ -81,7 +81,7 @@
 #
 
 
-
+echo "TEST TEST TEST !!!"
 
 
 # 1. Enable yum caching
