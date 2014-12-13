@@ -83,10 +83,7 @@
 
 
 
-curl -L -O http://bit.ly/1uB6C4x
-
-
-
+curl -L -O "https://raw.githubusercontent.com/vpalichev/CentOS-setup-done-right/master/basic-install-script.sh"
 echo "TEST TEST TEST !!!"
 
 
