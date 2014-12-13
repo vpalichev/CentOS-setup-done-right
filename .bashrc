@@ -7,7 +7,11 @@ alias cp='cp -i'
 alias mv='mv -i'
 
 function bwsinst { #basic web server installation
+	echo 'Downloading and running basic web server installation script'
+	echo 'from github.com/vpalichev/CentOS-setup-done-right/raw/master/basic-install-script.sh'
 	curl -L -o /root/basic-install-script.sh github.com/vpalichev/CentOS-setup-done-right/raw/master/basic-install-script.sh
+	chmod 775 /root/basic-install-script.sh
+	/root/basic-install-script.sh
 }
 
 # Source global definitions
