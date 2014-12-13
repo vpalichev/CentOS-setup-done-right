@@ -106,6 +106,9 @@ curl -L -o "/etc/yum.repos.d/nginx.repo" "https://github.com/vpalichev/CentOS-se
 # 3. Setup SFTP
 #   ???
 
+# 4. Install nginx
+echo "Installing nginx..."
+yum -y install nginx
 
 
 
