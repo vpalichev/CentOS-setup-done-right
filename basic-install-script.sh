@@ -2,16 +2,25 @@
 
 
 #Rough plan of web server installation:
-# 1. Enable yum keepcache (ok):
+
+# 1. Very basic system routines
+#   1.1. Set ethernet adapter
+#     Edit "/etc/sysconfig/network-scripts/ifcfg-eth0" and "/etc/sysconfig/network"
+#     Refer to: http://www.cyberciti.biz/faq/linux-configure-a-static-ip-address-tutorial/
+#
+#     Status: A LOT TO WORK ON (but OK in general)
+#
+#   1.2. Turn off SELinux 
+#     Edit "vi /etc/selinux/config"
+#     TODO: sed replace SELINUX with "SELINUX=disabled"
+#
+#     Status: not ready
+
+
+# 2. Enable yum keepcache (ok):
 #   Set "keepcache = 1" in "/etc/yum.conf"
 #
 #   Status: FINISHED
-#
-# 2. Set ethernet adapter
-#   Edit "/etc/sysconfig/network-scripts/ifcfg-eth0" and "/etc/sysconfig/network"
-#   Refer to: http://www.cyberciti.biz/faq/linux-configure-a-static-ip-address-tutorial/
-#
-#   Status: A LOT TO WORK ON (but ok in general)
 #
 # 3. Turn off firewall (USE WITH CARE):
 #
