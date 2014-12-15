@@ -12,9 +12,14 @@ function bwsinst { #basic web server installation
 	curl -L -o /root/basic-install-script.sh github.com/vpalichev/CentOS-setup-done-right/raw/master/basic-install-script.sh
 	chmod 775 /root/basic-install-script.sh
 
-	echo 'First parameter in bashrc $1'
+	echo "First parameter in bashrc: {1}"
 
 	/root/basic-install-script.sh $1
+}
+
+#TO BE REMOVED
+function genericbashtesting {
+	echo "Fist argument is: ${1}"
 }
 
 # Source global definitions

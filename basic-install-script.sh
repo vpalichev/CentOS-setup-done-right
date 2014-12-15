@@ -87,6 +87,10 @@ echo -e "\e[33m----------------------------------------------\e[0m"
 CurrentTime=$(date -u +'%Y-%m-%dU%H-%M-%S')
 echo -e "\e[33m$CurrentTime: commencing basic-install-script.sh \e[0m"
 
+echo "First parameter in basic-install-script.sh: {1}"
+
+
+
 # 1.1. Set ethernet adapter settings
 # ???
 #
