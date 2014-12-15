@@ -167,7 +167,7 @@ yum -y --enablerepo=remi,remi-php56 install php-fpm php-common
 
 # 6. Install MySQL
 echo "Installing MySQL..."
-yum install mysql-server
+yum -y install mysql-server
 chkconfig mysqld on
 
 
@@ -175,3 +175,7 @@ chkconfig mysqld on
 
 
 # 3. 
+
+
+#Final part: closing everything, exit
+exitWithMessage

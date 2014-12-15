@@ -18,11 +18,6 @@ function bwsinst { #basic web server installation
 	/root/basic-install-script.sh $1
 }
 
-#TO BE REMOVED
-function genericbashtesting {
-	echo "Fist argument is: ${1}"
-}
-
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
