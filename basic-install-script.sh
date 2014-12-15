@@ -80,6 +80,15 @@
 
 
 
+function exitWithMessage {
+	CurrentTime=$(date -u +'%Y-%m-%dU%H-%M-%S')
+	echo -e "\e[33m$CurrentTime: finishing basic-install-script.sh \e[0m"
+	echo -e "\e[33m----------------------------------------------\e[0m"
+	exit
+}
+
+
+
 
 
 # Beginning echo's
@@ -87,7 +96,7 @@ echo -e "\e[33m----------------------------------------------\e[0m"
 CurrentTime=$(date -u +'%Y-%m-%dU%H-%M-%S')
 echo -e "\e[33m$CurrentTime: commencing basic-install-script.sh \e[0m"
 
-echo "First parameter in basic-install-script.sh: {1}"
+echo "First parameter in basic-install-script.sh: ${1}"
 
 
 
@@ -118,14 +127,13 @@ echo "Installing Midnight Commander..."
 yum -y install mc
 
 
-echo 'First parameter inside the script itself: $1'
-
-
 #Exit if "Generic setup only is turned on"
-if [ $1 = '--justgeneric'] ; then
+if [ $1 = '--justgeneric' ] ; then
 	echo -e "\e[33mGeneric setup only\e[0m"	
 	exitWithMessage
 fi
+
+
 
 
 
@@ -167,9 +175,3 @@ chkconfig mysqld on
 
 
 # 3. 
-function exitWithMessage {
-	CurrentTime=$(date -u +'%Y-%m-%dU%H-%M-%S')
-	echo -e "\e[33m$CurrentTime: finishing basic-install-script.sh \e[0m"
-	echo -e "\e[33m----------------------------------------------\e[0m"
-	exit
-}
