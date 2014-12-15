@@ -107,6 +107,7 @@ echo "First parameter in basic-install-script.sh: ${1}"
 # ???    
 #  
 # 1.3. Turn off firewall (USE WITH CARE)   
+# TODO: write proper firewall rules
 chkconfig iptables off
 service iptables stop
 
