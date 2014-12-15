@@ -76,6 +76,11 @@
 #
 
 
+#!!! TODO: Create soflinks(?) to all popular configuration files
+
+
+
+
 
 # Beginning echo's
 echo -e "\e[33m----------------------------------------------\e[0m"
@@ -103,6 +108,19 @@ yum -y install yum-plugin-downloadonly
 # 1.6. Set UTC timezone
 echo "Setting UTC timezone..."
 ln -sf /usr/share/zoneinfo/UTC /etc/localtime
+
+# 1.7. Install Midnight Commander
+echo "Installing Midnight Commander..."
+yum -y install mc
+
+
+#Exit if "Generic setup only is turned on"
+if [ $1 = '--justgeneric'] ; then
+	exit 1;
+
+
+fi
+
 
 
 # 2. Adding repositories
