@@ -114,6 +114,9 @@ echo "Installing Midnight Commander..."
 yum -y install mc
 
 
+echo 'First parameter inside the script itself: $1'
+
+
 #Exit if "Generic setup only is turned on"
 if [ $1 = '--justgeneric'] ; then
 	echo -e "\e[33mGeneric setup only\e[0m"	
