@@ -160,7 +160,6 @@ chkconfig mysqld on
 
 
 # 3. 
-
 function exitWithMessage {
 	CurrentTime=$(date -u +'%Y-%m-%dU%H-%M-%S')
 	echo -e "\e[33m$CurrentTime: finishing basic-install-script.sh \e[0m"
