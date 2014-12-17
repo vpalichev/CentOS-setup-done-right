@@ -160,16 +160,17 @@ echo "Installing nginx..."
 yum -y install nginx
 service nginx start
 
-
-# 5. Install PHP
-echo "Installing PHP..."
-yum -y --enablerepo=remi,remi-php56 install php-fpm php-common
-
-
 # 6. Install MySQL
 echo "Installing MySQL..."
 yum -y install mysql-server
 chkconfig mysqld on
+
+# 5. Install PHP
+echo "Installing PHP..."
+yum -y --enablerepo=remi,remi-php56 install php-fpm php-mysql php-common 
+
+
+
 
 
 # 2. Not much here yet!
