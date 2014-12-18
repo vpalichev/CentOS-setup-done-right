@@ -167,7 +167,7 @@ chkconfig mysqld on
 
 # 5. Install PHP
 echo "Installing PHP..."
-yum -y --enablerepo=remi,remi-php56 install php-fpm php-common 
+yum -y --enablerepo=remi,remi-php56 install php-fpm php-mysql php-common 
 
 
 
