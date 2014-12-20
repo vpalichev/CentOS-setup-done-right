@@ -127,6 +127,12 @@ ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 echo "Installing Midnight Commander..."
 yum -y install mc
 
+# 1.8. Install wget
+echo "Installing wget..."
+yum -y install wget
+
+
+
 
 #Exit if "Generic setup only is turned on"
 if [ $1 = '--justgeneric' ] ; then
