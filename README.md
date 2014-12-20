@@ -11,4 +11,5 @@ Default config: **/etc/nginx/nginx.conf** and **/etc/nginx/conf.d/default.conf**
 
 2. yum:
 
-Yum cache:  /var/cache/yum
+Yum cache:  /var/cache/yum/
+Yum repositories: /etc/yum.repos.d/
