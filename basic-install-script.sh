@@ -127,6 +127,12 @@ ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 echo "Installing Midnight Commander..."
 yum -y install mc
 
+# 1.8. Install wget
+echo "Installing wget..."
+yum -y install wget
+
+
+
 
 #Exit if "Generic setup only is turned on"
 if [ $1 = '--justgeneric' ] ; then
@@ -160,18 +166,22 @@ echo "Installing nginx..."
 yum -y install nginx
 service nginx start
 
+<<<<<<< HEAD
 # ASSIGN A SEQUENTIAL NUMBER
 mkdir -p /srv/www
-
-# 5. Install PHP
-echo "Installing PHP..."
-yum -y --enablerepo=remi,remi-php56 install php-fpm php-common
-
-
+=======
 # 6. Install MySQL
 echo "Installing MySQL..."
 yum -y install mysql-server
 chkconfig mysqld on
+>>>>>>> origin/master
+
+# 5. Install PHP
+echo "Installing PHP..."
+yum -y --enablerepo=remi,remi-php56 install php-fpm php-mysql php-common 
+
+
+
 
 
 
