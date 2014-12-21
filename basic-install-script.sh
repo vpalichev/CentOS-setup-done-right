@@ -160,6 +160,8 @@ echo "Installing nginx..."
 yum -y install nginx
 service nginx start
 
+# ASSIGN A SEQUENTIAL NUMBER
+mkdir -p /srv/www
 
 # 5. Install PHP
 echo "Installing PHP..."
@@ -170,6 +172,14 @@ yum -y --enablerepo=remi,remi-php56 install php-fpm php-common
 echo "Installing MySQL..."
 yum -y install mysql-server
 chkconfig mysqld on
+
+
+
+
+
+
+
+
 
 
 # 2. Not much here yet!
